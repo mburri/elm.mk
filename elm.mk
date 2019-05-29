@@ -59,7 +59,7 @@ MO_URL := "https://raw.githubusercontent.com/tests-always-included/mo/${MO_VERSI
 ifeq ($(OS),Darwin)
 	DEVD_URL := "https://github.com/cortesi/devd/releases/download/v${DEVD_VERSION}/devd-${DEVD_VERSION}-osx64.tgz"
 	ELM_URL := "https://github.com/elm/compiler/releases/download/${ELM_VERSION}/binaries-for-mac.tar.gz"
-	ELM_FORMAT_URL: = "https://github.com/avh4/elm-format/releases/download/${ELM_FORMAT_VERSION}/elm-format-${ELM_FORMAT_VERSION}-mac-x64.tgz"
+	ELM_FORMAT_URL := "https://github.com/avh4/elm-format/releases/download/${ELM_FORMAT_VERSION}/elm-format-${ELM_FORMAT_VERSION}-mac-x64.tgz"
 	MODD_URL := "https://github.com/cortesi/modd/releases/download/v${MODD_VERSION}/modd-${MODD_VERSION}-osx64.tgz"
 	WT_URL := "https://github.com/wellington/wellington/releases/download/v${WT_VERSION}/wt_v${WT_VERSION}_darwin_amd64.tar.gz"
 else
