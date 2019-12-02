@@ -2,6 +2,7 @@ dummy:
 	rm -rf $@
 	mkdir $@
 	cp elm.mk dummy/
+	npm --version
 	cd dummy && $(MAKE) all prod tests --jobs=4 -f elm.mk --ignore-errors && cd ..
 .PHONY: dummy
 
