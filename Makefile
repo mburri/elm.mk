@@ -1,4 +1,5 @@
 dummy:
+	nvm install lts/erbium
 	rm -rf $@
 	mkdir $@
 	cp elm.mk dummy/
