@@ -1,5 +1,8 @@
 language: ruby
 
+cache:
+  elm: false
+
 os:
   - linux
   - osx
