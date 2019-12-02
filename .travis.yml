@@ -3,6 +3,9 @@ language: ruby
 cache:
   elm: false
 
+node_js:
+  - 11
+
 os:
   - linux
   - osx
