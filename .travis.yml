@@ -1,10 +1,7 @@
 language: ruby
 
-cache:
-  elm: false
-
 node_js:
-  - lts/erbium
+  - 'lts/erbium'
 
 os:
   - linux
