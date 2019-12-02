@@ -1,5 +1,11 @@
 language: ruby
 
+install:
+  - rm -rf ~/.nvm
+  - git clone https://github.com/creationix/nvm.git ~/.nvm
+  - source ~/.nvm/nvm.sh
+  - nvm install lts/*
+
 os:
   - linux
   - osx
