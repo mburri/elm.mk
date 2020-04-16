@@ -12,7 +12,6 @@ development environment. This means that it tries as much as possible to bundle 
 ## Features
 
 - [x] Cross-platform (OS X + Linux 64bit - help with Windows would be nice)
-- [x] Elm [StartApp](http://package.elm-lang.org/packages/evancz/start-app/2.0.2/) installation
 - [x] Project scaffold generation
 - [x] Elm compilation with warnings
 - [x] Scss compilation via [Wellington](https://github.com/wellington/wellington)

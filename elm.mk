@@ -46,9 +46,9 @@ WT := $(BIN)/wt
 UGLIFYJS := $(NPM_BIN)/uglifyjs
 
 DEVD_VERSION := 0.9
-ELM_VERSION := 0.19.0
+ELM_VERSION := 0.19.1
 ELM_FORMAT_VERSION := 0.8.1
-ELM_TEST_VERSION := 0.19.0-rev6
+ELM_TEST_VERSION := 0.19.1
 MO_VERSION := 2.0.4
 MODD_VERSION := 0.8
 WT_VERSION := 1.0.4
@@ -61,13 +61,13 @@ MO_URL := "https://raw.githubusercontent.com/tests-always-included/mo/${MO_VERSI
 
 ifeq ($(OS),Darwin)
 	DEVD_URL := "https://github.com/cortesi/devd/releases/download/v${DEVD_VERSION}/devd-${DEVD_VERSION}-osx64.tgz"
-	ELM_URL := "https://github.com/elm/compiler/releases/download/${ELM_VERSION}/binaries-for-mac.tar.gz"
+	ELM_URL := "https://github.com/elm/compiler/releases/download/${ELM_VERSION}/binary-for-mac-64-bit.gz"
 	ELM_FORMAT_URL := "https://github.com/avh4/elm-format/releases/download/${ELM_FORMAT_VERSION}/elm-format-${ELM_FORMAT_VERSION}-mac-x64.tgz"
 	MODD_URL := "https://github.com/cortesi/modd/releases/download/v${MODD_VERSION}/modd-${MODD_VERSION}-osx64.tgz"
 	WT_URL := "https://github.com/wellington/wellington/releases/download/v${WT_VERSION}/wt_v${WT_VERSION}_darwin_amd64.tar.gz"
 else
 	DEVD_URL := "https://github.com/cortesi/devd/releases/download/v${DEVD_VERSION}/devd-${DEVD_VERSION}-linux64.tgz"
-	ELM_URL := "https://github.com/elm/compiler/releases/download/${ELM_VERSION}/binaries-for-linux.tar.gz"
+	ELM_URL := "https://github.com/elm/compiler/releases/download/${ELM_VERSION}/binary-for-linux-64-bit.gz"
 	ELM_FORMAT_URL := "https://github.com/avh4/elm-format/releases/download/${ELM_FORMAT_VERSION}/elm-format-${ELM_FORMAT_VERSION}-linux-x64.tgz"
 	MODD_URL := "https://github.com/cortesi/modd/releases/download/v${MODD_VERSION}/modd-${MODD_VERSION}-linux64.tgz"
 	WT_URL := "https://github.com/wellington/wellington/releases/download/v${WT_VERSION}/wt_v${WT_VERSION}_linux_amd64.tar.gz"
@@ -169,10 +169,11 @@ $(DEVD):
 	tar -xzf $@.tgz -C bin/ --strip 1
 	rm $@.tgz
 
+
 $(ELM):
-	${curl} ${ELM_URL} -L -o $@.tgz
-	tar -xzf $@.tgz -C bin/
-	rm $@.tgz
+	${curl} ${ELM_URL} -L -o $@.gz
+	gunzip -d $@.gz
+	chmod +x $@
 
 $(ELM_FORMAT):
 	${curl} ${ELM_FORMAT_URL} -L -o $@.tgz
@@ -310,24 +311,24 @@ define elm_json
     "source-directories": [
         "src"
     ],
-    "elm-version": "0.19.0",
+    "elm-version": "0.19.1",
     "dependencies": {
         "direct": {
-            "elm/browser": "1.0.0",
-            "elm/core": "1.0.0",
+            "elm/browser": "1.0.2",
+            "elm/core": "1.0.2",
             "elm/html": "1.0.0"
         },
         "indirect": {
-            "elm/json": "1.0.0",
+            "elm/json": "1.1.3",
             "elm/time": "1.0.0",
             "elm/url": "1.0.0",
-            "elm/virtual-dom": "1.0.0"
+            "elm/virtual-dom": "1.0.2"
         }
     },
     "test-dependencies": {
         "direct": {},
         "indirect": {}
-    }
+	}
 }
 endef
 export elm_json
