@@ -1,6 +1,6 @@
 # Elm.mk
 
-[![Build Status](https://travis-ci.org/cloud8421/elm.mk.svg?branch=master)](https://travis-ci.org/cloud8421/elm.mk)
+[![Build Status](https://travis-ci.org/mburri/elm.mk.svg?branch=master)](https://travis-ci.org/mburri/elm.mk)
 
 A fast, close-to-zero dependencies toolchain for Elm-based single page applications.
 
@@ -23,7 +23,7 @@ development environment. This means that it tries as much as possible to bundle 
 ## Setup from scratch
 
 - `mkdir my_new_project && cd my_new_project`
-- `curl -o elm.mk https://raw.githubusercontent.com/cloud8421/elm.mk/master/elm.mk`
+- `curl -o elm.mk https://raw.githubusercontent.com/mburri/elm.mk/master/elm.mk`
 - `make -f elm.mk`
 
 This will generate the needed folder structure and files. Note that at the end of `make -f elm.mk`, you're left with
